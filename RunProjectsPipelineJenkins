@@ -5,9 +5,8 @@ pipeline {
             steps {
                 script {
                     sh "ls -l"
-                    sh "cd /var/lib/jenkins/workspace"
+                    sh "cd /var/lib/jenkins/workspace/CloneGitHub/backend-good-practices/server/"
                     sh "pwd"
-                    sh "ls -l"
                     // sh "cd CloneGitHub/"
                     // sh "backend-good-practices/"
                     // sh "server/"
