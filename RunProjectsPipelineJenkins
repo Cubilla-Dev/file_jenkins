@@ -4,7 +4,8 @@ pipeline {
         stage ('Ir al directorio del proyecto') {
             steps {
                 script {
-                    sh "cd workspace/"
+                    sh "ls -l"
+                    sh "cd /var/lib/jenkins/workspace"
                     sh "cd CloneGitHub/"
                     sh "backend-good-practices/"
                     sh "server/"
