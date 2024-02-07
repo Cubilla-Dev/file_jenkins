@@ -1,0 +1,29 @@
+pipeline {
+    agent any 
+    stages {
+        stage ('Ir al directorio del proyecto') {
+            steps {
+                script {
+                    sh "cd workspace/"
+                    sh "cd CloneGitHub/"
+                    sh "backend-good-practices/"
+                    sh "server/"
+                }
+            }
+        }
+        stage("Instalacion de los paquetes") {
+            steps {
+                script {
+                    sh "npm i"
+                }
+            }
+        }
+        stage("Arranque del servidor") {
+            steps {
+                script {
+                    sh "pm2 start server.js"
+                }
+            }
+        }
+    }
+}
